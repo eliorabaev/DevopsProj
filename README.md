@@ -33,7 +33,7 @@ The backend application communicates with Redis using the Redis Protocol (RESP) 
 
 1. Clone this repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/eliorabaev/DevopsProj.git
    cd fun-words-api
    ```
 
@@ -123,15 +123,3 @@ You can modify these in the `docker-compose.yml` file if needed.
 ├── requirements.txt    # Python dependencies
 └── README.md           # This documentation
 ```
-
-### Running Tests
-
-*[Add test instructions if applicable]*
-
-## 📄 License
-
-*[Add license information]*
-
-## 👥 Contributing
-
-*[Add contribution guidelines if applicable]*
