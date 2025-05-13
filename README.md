@@ -123,15 +123,3 @@ You can modify these in the `docker-compose.yml` file if needed.
 ├── requirements.txt    # Python dependencies
 └── README.md           # This documentation
 ```
-
-### Running Tests
-
-*[Add test instructions if applicable]*
-
-## 📄 License
-
-*[Add license information]*
-
-## 👥 Contributing
-
-*[Add contribution guidelines if applicable]*
