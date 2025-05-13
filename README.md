@@ -33,7 +33,7 @@ The backend application communicates with Redis using the Redis Protocol (RESP) 
 
 1. Clone this repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/eliorabaev/DevopsProj.git
    cd fun-words-api
    ```
 
