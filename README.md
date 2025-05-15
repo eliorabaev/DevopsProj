@@ -123,3 +123,9 @@ You can modify these in the `docker-compose.yml` file if needed.
 ├── requirements.txt    # Python dependencies
 └── README.md           # This documentation
 ```
+
+## Contributors
+
+- Elior Abaev
+- Adir Gelkop
+- Roee Levi   
