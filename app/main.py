@@ -5,6 +5,8 @@ from typing import Optional, List, Union
 import os
 import random
 
+# All the comments can be removed for a cleaner codebase
+
 # Initialize FastAPI app
 app = FastAPI(title="Fun Redis Word Service")
 
@@ -64,7 +66,7 @@ async def startup_event():
     if not redis_client.exists(WORD_INDEX_KEY):
         # Initialize the index
         redis_client.set(WORD_INDEX_KEY, "0")
-        
+        # remove breake lines if they are not: After variables initialization, before and after if, before and after the loop and bevore return
         # Set total words count
         redis_client.set(TOTAL_WORDS_KEY, str(len(WORDS)))
         
@@ -99,29 +101,29 @@ def read_root():
     except Exception as e:
         # Fallback in case of Redis errors
         random_word = random.choice(WORDS)
-        return {"word": random_word, "message": f"Your fun word is: {random_word}! (Fallback mode)"}
+        return {"word": random_word, "message": f"Your fun word is: {random_word}! (Fallback mode)"} # break line before return
 
 @app.get("/data/{key}")
 def get_item(key: str):
     value = redis_client.get(key)
     if value is None:
         raise HTTPException(status_code=404, detail="Key not found")
-    return {"key": key, "value": value}
+    return {"key": key, "value": value} # break line before return and after if
 
 @app.post("/data", status_code=201)
 def create_item(item: Item):
     try:
         redis_client.set(item.key, item.value)
-        return item
+        return item # break line before return
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.delete("/data/{key}")
 def delete_item(key: str):
     result = redis_client.delete(key)
-    if result == 0:
+    if result == 0: # break line before if
         raise HTTPException(status_code=404, detail="Key not found")
-    return {"message": "Key deleted successfully"}
+    return {"message": "Key deleted successfully"} # break line before return and after if
 
 @app.get("/words")
 def get_all_words():
@@ -132,15 +134,15 @@ def get_all_words():
     
     for i in range(total_words):
         word = redis_client.get(f"{WORD_KEY_PREFIX}{i}")
-        if word:
+        if word: # break line before if
             words.append(word)
-    return {"words": words, "count": len(words)}
+    return {"words": words, "count": len(words)}# break line before return
 
 @app.get("/words/reset")
 def reset_word_index():
     """Reset the word index to start from the beginning"""
     redis_client.set(WORD_INDEX_KEY, "0")
-    return {"message": "Word index reset successfully"}
+    return {"message": "Word index reset successfully"} # break line before return
 
 # Add a new word to the database
 @app.post("/words/add", status_code=201)
@@ -198,6 +200,6 @@ def health_check():
     try:
         # Check if Redis is responding
         redis_client.ping()
-        return {"status": "healthy", "redis": "connected"}
+        return {"status": "healthy", "redis": "connected"} # break line before return
     except Exception as e:
         return {"status": "unhealthy", "error": str(e)}
