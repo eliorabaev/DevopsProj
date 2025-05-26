@@ -1,3 +1,5 @@
+# Perfect project!
+
 # Fun Words API
 
 A lightweight FastAPI service backed by Redis that serves a random fun word on each request. Perfect for adding a touch of whimsy to your applications or just expanding your vocabulary!
@@ -76,6 +78,8 @@ curl -X POST http://localhost:8000/words/add-multiple \
 ### General Data Storage
 
 The API also provides general key-value storage operations:
+
+Missing - How should look the body for the "post" request
 
 | Method | URL | Description | Response |
 |--------|-----|-------------|----------|
